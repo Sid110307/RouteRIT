@@ -11,7 +11,6 @@ export default defineConfig({
 		viteCompression(),
 		ViteImageOptimizer(),
 	],
-	base: "/CampusConnect/",
 	server: { port: 3000 },
 	resolve: { alias: { "@": "/src" } },
 	build: { emptyOutDir: true },
