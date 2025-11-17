@@ -174,7 +174,7 @@ const RefreshButton = ({ fetchData, fetching }: { fetchData: () => void; fetchin
 			<Spinner size="xs" />
 		) : (
 			<RefreshDouble
-				className="h-4 w-4"
+				className="size-4"
 				style={{ color: fetching ? "var(--muted)" : "var(--foreground)" }}
 			/>
 		)}

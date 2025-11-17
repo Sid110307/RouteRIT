@@ -8,12 +8,12 @@ import { cn } from "@/core/utils";
 const spinnerVariants = cva("relative block text-foreground", {
 	variants: {
 		size: {
-			"xs": "w-4 h-4",
-			"sm": "w-5 h-5",
-			"md": "w-6 h-6",
-			"lg": "w-8 h-8",
-			"xl": "w-10 h-10",
-			"2xl": "w-12 h-12",
+			"xs": "size-4",
+			"sm": "size-5",
+			"md": "size-6",
+			"lg": "size-8",
+			"xl": "size-10",
+			"2xl": "size-12",
 		},
 	},
 	defaultVariants: {

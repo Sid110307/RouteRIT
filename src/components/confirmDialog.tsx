@@ -61,7 +61,7 @@ export const ConfirmDialog = ({
 							onClick={() => onOpenChange(false)}
 							aria-label="Close"
 						>
-							<Xmark className="h-4 w-4" />
+							<Xmark className="size-4" />
 						</Button>
 						<AlertDialogHeader>
 							<div className="flex flex-col mb-2">

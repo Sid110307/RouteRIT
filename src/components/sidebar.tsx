@@ -5,7 +5,6 @@ import {
 	ClipboardCheck,
 	Group,
 	Home,
-	LogOut,
 	MapPin,
 	MultiplePagesXmark,
 	Network,
@@ -13,8 +12,8 @@ import {
 	TaskList,
 } from "iconoir-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+import { LogoSVG } from "@/assets/logo";
+
 import {
 	Sidebar as NativeSidebar,
 	SidebarContent,
@@ -30,9 +29,7 @@ import {
 	useSidebar,
 } from "@/components/ui/sidebar";
 
-import { useSettingsState } from "@/core/state/settings";
 import { cn } from "@/core/utils";
-import { useLogout } from "@refinedev/core";
 
 const items = [
 	[
@@ -51,10 +48,7 @@ const items = [
 
 export const Sidebar = () => {
 	const location = useLocation();
-
-	const { mutate: logout } = useLogout();
 	const { open, openMobile } = useSidebar();
-	const { showAuditTab } = useSettingsState();
 
 	return (
 		<NativeSidebar collapsible="icon">
@@ -66,17 +60,14 @@ export const Sidebar = () => {
 						(open || openMobile) && "gap-1.5 w-max",
 					)}
 				>
-					<Avatar className="h-12 w-12">
-						<AvatarImage src="/images/logo.png" alt="Logo" />
-						<AvatarFallback>VL</AvatarFallback>
-					</Avatar>
+					<div className="h-12 w-12 flex items-center justify-center">
+						<LogoSVG className="h-8 w-8 object-contain" />
+					</div>
 					{(open || openMobile) && (
 						<div className="flex flex-col gap-1.25">
-							<span className="text-xl font-semibold leading-tight">
-								Vrikshalakshya
-							</span>
+							<span className="text-xl font-semibold leading-tight">RouteRIT</span>
 							<span className="text-sm text-muted-foreground leading-tight">
-								Admin Panel for Ankura
+								Campus navigation system
 							</span>
 						</div>
 					)}
@@ -90,25 +81,23 @@ export const Sidebar = () => {
 							{items.map((links, index) => (
 								<React.Fragment key={index}>
 									{index > 0 && <SidebarSeparator className="my-2" />}
-									{links.map(item =>
-										!showAuditTab && item.to === "/audit" ? null : (
-											<SidebarMenuItem key={item.label}>
-												<SidebarMenuButton
-													asChild
-													isActive={location.pathname === item.to}
-													tooltip={item.label}
+									{links.map(item => (
+										<SidebarMenuItem key={item.label}>
+											<SidebarMenuButton
+												asChild
+												isActive={location.pathname === item.to}
+												tooltip={item.label}
+											>
+												<NavLink
+													to={item.to}
+													className="flex items-center gap-3 px-3 py-2"
 												>
-													<NavLink
-														to={item.to}
-														className="flex items-center gap-3 px-3 py-2"
-													>
-														<item.icon className="h-5 w-5" />
-														<span>{item.label}</span>
-													</NavLink>
-												</SidebarMenuButton>
-											</SidebarMenuItem>
-										),
-									)}
+													<item.icon className="size-5" />
+													<span>{item.label}</span>
+												</NavLink>
+											</SidebarMenuButton>
+										</SidebarMenuItem>
+									))}
 								</React.Fragment>
 							))}
 						</SidebarMenu>
@@ -119,19 +108,26 @@ export const Sidebar = () => {
 				<SidebarSeparator />
 				<SidebarMenu>
 					<SidebarMenuItem>
-						<SidebarMenuButton asChild tooltip="Logout">
-							<Button
-								onClick={() => {
-									sessionStorage.removeItem("unauthorized");
-									logout();
-								}}
-								className="flex w-full justify-center items-center gap-3 px-3 py-2 border border-destructive text-destructive hover:bg-destructive hover:text-white"
-								variant="ghost"
+						<div className="flex w-full justify-center py-2 gap-1 text-xs text-muted-foreground">
+							Made by{" "}
+							<a
+								href="https://sid110307.github.io/Sid110307"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="font-medium underline hover:text-foreground"
 							>
-								<LogOut className="h-5 w-5" />
-								{(open || openMobile) && <span>Logout</span>}
-							</Button>
-						</SidebarMenuButton>
+								@sid110307
+							</a>{" "}
+							and{" "}
+							<a
+								href="https://github.com/Yashavanta123"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="font-medium underline hover:text-foreground"
+							>
+								@Yashavanta123
+							</a>
+						</div>
 					</SidebarMenuItem>
 				</SidebarMenu>
 			</SidebarFooter>

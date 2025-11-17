@@ -50,4 +50,3 @@ Our solution can be extended to other campuses with similar needs by updating th
 - Tailwind CSS
 - Framer Motion
 - Zustand
-- SVG and JSON data for map rendering
