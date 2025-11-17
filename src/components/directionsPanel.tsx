@@ -12,19 +12,19 @@ const DirectionsPanel = () => {
 
 	return (
 		<Card className="flex-1">
-			<CardHeader className="pb-2">
+			<CardHeader>
 				<CardTitle className="text-base">Directions</CardTitle>
 			</CardHeader>
-			<CardContent className="text-xs flex flex-col gap-2">
+			<CardContent className="text-sm text-center flex flex-col gap-2">
 				{directions.length === 0 ? (
-					<p className="text-muted">
+					<p className="text-muted-foreground">
 						No route yet. Choose buildings and press <strong>Find route</strong>.
 					</p>
 				) : (
 					<>
 						<p>
 							<span className="font-semibold">Approx distance:</span>{" "}
-							{length.toFixed(0)} units
+							{length.toFixed(0)} meters
 						</p>
 						<ScrollArea className="max-h-40 pr-2">
 							<ol className="list-decimal list-inside space-y-1">

@@ -48,5 +48,5 @@ Our solution can be extended to other campuses with similar needs by updating th
 - Vite
 - TypeScript
 - Tailwind CSS
-- Framer Motion
+- Motion (Framer Motion)
 - Zustand

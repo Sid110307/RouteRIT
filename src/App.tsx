@@ -2,9 +2,10 @@ import React from "react";
 
 import { motion } from "motion/react";
 
-import BuildingSelector from "@/components/buildingSelector";
-import RouteOptions from "@/components/routeOptions";
+import BuildingChooser from "@/components/buildingChooser";
 import DirectionsPanel from "@/components/directionsPanel";
+import MapView from "@/components/mapView";
+import RouteOptions from "@/components/routeOptions";
 import { Sidebar } from "@/components/sidebar";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -36,9 +37,17 @@ const App = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ delay: 0.15, duration: 0.3 }}
 					>
-						<BuildingSelector />
+						<BuildingChooser />
 						<RouteOptions />
 						<DirectionsPanel />
+					</motion.section>
+					<motion.section
+						className="flex-1"
+						initial={{ opacity: 0, x: 16 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ delay: 0.2, duration: 0.3 }}
+					>
+						<MapView />
 					</motion.section>
 				</div>
 			</Layout>

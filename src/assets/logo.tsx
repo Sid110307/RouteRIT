@@ -1,8 +1,8 @@
-import React, { SVGProps } from "react";
+import React from "react";
 
 import { motion } from "motion/react";
 
-export const LogoSVG = (props: SVGProps<SVGSVGElement>) => (
+export const LogoSVG = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width={512}

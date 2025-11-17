@@ -16,10 +16,9 @@ import {
 import { buildings } from "@/core/data";
 import { useRouteState } from "@/core/state";
 
-const BuildingSelector = () => {
+const BuildingChooser = () => {
 	const { startBuildingId, endBuildingId, setStartBuildingId, setEndBuildingId, computeRoute } =
 		useRouteState();
-
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 8 }}
@@ -76,4 +75,4 @@ const BuildingSelector = () => {
 	);
 };
 
-export default BuildingSelector;
+export default BuildingChooser;

@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 
 import App from "@/App";
@@ -13,7 +13,7 @@ import { ThemeProvider } from "next-themes";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 createRoot(document.getElementById("root")!).render(
-	<StrictMode>
+	<React.StrictMode>
 		<BrowserRouter>
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<IconoirProvider iconProps={{ width: 16, height: 16 }}>
@@ -23,5 +23,5 @@ createRoot(document.getElementById("root")!).render(
 				</IconoirProvider>
 			</ThemeProvider>
 		</BrowserRouter>
-	</StrictMode>,
+	</React.StrictMode>,
 );
