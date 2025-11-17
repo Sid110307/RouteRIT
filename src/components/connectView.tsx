@@ -116,7 +116,7 @@ const ConnectView = () => {
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 overflow-auto">
 							{filteredPeople.length === 0 ? (
 								<p className="text-xs text-muted-foreground pt-2">
-									No matches. Try clearing some filters.
+									No results found.
 								</p>
 							) : (
 								filteredPeople.map(p => {

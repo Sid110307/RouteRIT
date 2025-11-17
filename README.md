@@ -14,7 +14,7 @@ Students struggle to find:
 - Senior students or peers with matching academic interests
 - Opportunities for capstone projects, mentorship, or collaboration
 
-LinkedIn and existing platforms fail in the academic context:
+LinkedIn and most existing platforms fail in the academic context:
 
 - No verified university-level data
 - No mapping of labs, rooms, or buildings

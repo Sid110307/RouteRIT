@@ -101,7 +101,7 @@ const RoomChooser = () => {
 		setRoomId: (id: string) => void,
 	) =>
 		roomsList.length === 0 ? (
-			<p className="text-sm">No rooms in this category for the selected building.</p>
+			<p className="text-sm">No rooms in this building for the selected category.</p>
 		) : (
 			<ScrollArea className="max-h-40 pr-2">
 				{Object.entries(roomsByFloor)
