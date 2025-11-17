@@ -37,13 +37,11 @@ distributed. Students, professors, and researchers struggle due to fragmented sy
 * Freshers spend weeks locating facilities, labs, and offices
 * No hybrid indoor–outdoor routing or accessibility-based pathfinding
 
-As a result, productivity suffers, research collaboration is hindered, and students miss out on valuable academic and
-funding opportunities.
+As a result, productivity suffers, research collaboration is hindered, and students miss out on valuable academic and funding opportunities.
 
 ## Proposed Solution
 
-CampusConnect is a centralized academic ecosystem that integrates professor discovery, research collaboration, funding
-access, and campus navigation—powered by AI-assisted research tools.
+CampusConnect is a centralized academic ecosystem that integrates professor discovery, research collaboration, funding access, and campus navigation—powered by AI-assisted research tools.
 
 The platform provides:
 
@@ -119,8 +117,11 @@ The platform provides:
 
 ## Tech Stack
 
-* Frontend: React, Vite, TypeScript
-* UI: Tailwind CSS, Framer Motion
-* State Management: Zustand
-* AI Layer: ChatGPT / LLM-based research assistant (not included in this repo)
-* Storage: Cloud + optional local persistence
+* React
+* Vite
+* TypeScript
+* Tailwind CSS
+* Motion (Framer Motion)
+* Zustand
+* LLM-based research assistant
+* Storage: GCP / Supabase (AWS S3)
