@@ -1,16 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router";
 
-import {
-	ClipboardCheck,
-	Group,
-	Home,
-	MapPin,
-	MultiplePagesXmark,
-	Network,
-	Settings,
-	TaskList,
-} from "iconoir-react";
+import { Home, MapPin } from "iconoir-react";
 
 import { LogoSVG } from "@/assets/logo";
 
@@ -34,15 +25,7 @@ import { cn } from "@/core/utils";
 const items = [
 	[
 		{ to: "/", icon: Home, label: "Home" },
-		{ to: "/submissions", icon: ClipboardCheck, label: "Submissions" },
-		{ to: "/users", icon: Group, label: "Users" },
-		{ to: "/map", icon: MapPin, label: "Map" },
-		{ to: "/feedback", icon: Network, label: "Feedback" },
-	],
-	[
-		{ to: "/audit", icon: TaskList, label: "Audit Logs" },
-		{ to: "/delete-requests", icon: MultiplePagesXmark, label: "Delete Requests" },
-		{ to: "/settings", icon: Settings, label: "Settings" },
+		{ to: "/map", icon: MapPin, label: "Campus Map" },
 	],
 ];
 
@@ -104,7 +87,7 @@ export const Sidebar = () => {
 					</SidebarGroupContent>
 				</SidebarGroup>
 			</SidebarContent>
-			<SidebarFooter>
+			<SidebarFooter className={cn(!(open || openMobile) && "hidden")}>
 				<SidebarSeparator />
 				<SidebarMenu>
 					<SidebarMenuItem>

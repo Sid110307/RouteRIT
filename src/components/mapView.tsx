@@ -20,7 +20,7 @@ const MapView = () => {
 			<CardHeader>
 				<CardTitle className="text-base">Campus map (schematic)</CardTitle>
 			</CardHeader>
-			<CardContent className="relative aspect-[3/2] rounded-xl overflow-hidden p-0">
+			<CardContent className="relative rounded-xl overflow-hidden p-0">
 				<svg
 					viewBox="0 0 480 320"
 					className="w-full h-full"

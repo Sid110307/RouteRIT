@@ -42,7 +42,7 @@ const BuildingChooser = () => {
 							<SelectContent className="text-sm">
 								{buildings.map(b => (
 									<SelectItem key={b.id} value={b.id}>
-										{b.name}
+										<span className="block w-40 truncate">{b.name}</span>
 									</SelectItem>
 								))}
 							</SelectContent>
@@ -60,7 +60,7 @@ const BuildingChooser = () => {
 							<SelectContent className="text-sm">
 								{buildings.map(b => (
 									<SelectItem key={b.id} value={b.id}>
-										{b.name}
+										<span className="block w-40 truncate">{b.name}</span>
 									</SelectItem>
 								))}
 							</SelectContent>
