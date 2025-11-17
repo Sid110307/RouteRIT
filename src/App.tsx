@@ -12,11 +12,12 @@ import RoomChooser from "@/components/roomChooser";
 import RouteOptions from "@/components/routeOptions";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const Layout = (props: {
-	mode: "connect" | "navigate";
-	setMode: React.Dispatch<React.SetStateAction<"connect" | "navigate">>;
-	children: React.ReactNode;
-}) => {
+import { useRouteState } from "@/core/state";
+
+const Layout = (props: { children: React.ReactNode }) => {
+	const mode = useRouteState(s => s.mode);
+	const setMode = useRouteState(s => s.setMode);
+
 	return (
 		<div className="flex flex-col w-full h-screen">
 			<header className="w-full p-4 border-b border-border bg-background flex justify-between items-center gap-4">
@@ -50,8 +51,8 @@ const Layout = (props: {
 				</div>
 				<div className="flex items-center gap-4">
 					<Tabs
-						value={props.mode}
-						onValueChange={v => props.setMode(v as "connect" | "navigate")}
+						value={mode}
+						onValueChange={v => setMode(v as "connect" | "navigate")}
 						className="w-full"
 					>
 						<TabsList className="inline-flex">
@@ -76,10 +77,10 @@ const Layout = (props: {
 };
 
 const App = () => {
-	const [mode, setMode] = React.useState<"connect" | "navigate">("connect");
+	const mode = useRouteState(s => s.mode);
 	return (
 		<div className="w-full min-h-screen bg-background text-foreground">
-			<Layout mode={mode} setMode={setMode}>
+			<Layout>
 				{mode === "connect" ? (
 					<motion.section
 						className="flex-1"

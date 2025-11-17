@@ -11,10 +11,8 @@ import { useRouteState } from "@/core/state";
 const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));
 const MapView = () => {
 	const routeNodes = useRouteState(s => s.routeNodes);
-
-	const startNodeId = routeNodes && routeNodes.length > 0 ? routeNodes[0] : null;
-	const endNodeId =
-		routeNodes && routeNodes.length > 1 ? routeNodes[routeNodes.length - 1] : null;
+	const startNodeId = useRouteState(s => s.startNodeId);
+	const endNodeId = useRouteState(s => s.endNodeId);
 
 	const points = React.useMemo(() => {
 		if (!routeNodes || routeNodes.length < 2) return "";

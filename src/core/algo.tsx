@@ -1,5 +1,5 @@
-import { edges, nodes } from "@/core/data";
-import { EdgeKind, RouteType } from "@/core/types";
+import { buildingAnchors, edges, labs, nodes, rooms } from "@/core/data";
+import { EdgeKind, Person, RouteType } from "@/core/types";
 
 const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));
 const adjacency = (() => {
@@ -87,4 +87,22 @@ export const findPath = (startId: string, goalId: string, routeType: RouteType =
 	}
 
 	return null;
+};
+
+export const getPersonLocation = (person: Person) => {
+	if (!person.labId) return null;
+
+	const lab = labs.find(l => l.id === person.labId);
+	if (!lab) return null;
+
+	if (lab.roomId) {
+		const room = rooms.find(r => r.id === lab.roomId);
+		if (room)
+			return { nodeId: room.anchorNodeId, buildingId: lab.buildingId, roomId: lab.roomId };
+	}
+
+	const nodeId = buildingAnchors[lab.buildingId];
+	if (!nodeId) return null;
+
+	return { nodeId, buildingId: lab.buildingId, roomId: null };
 };

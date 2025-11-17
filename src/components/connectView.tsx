@@ -3,11 +3,14 @@ import React from "react";
 import { motion } from "motion/react";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+import { getPersonLocation } from "@/core/algo";
 import { buildings, labs, people, rooms } from "@/core/data";
+import { useRouteState } from "@/core/state";
 
 const deptFilters = ["All", "CSE", "ECE", "Civil"] as const;
 type DeptFilter = (typeof deptFilters)[number];
@@ -112,7 +115,7 @@ const ConnectView = () => {
 					<CardTitle className="text-base">People & Labs</CardTitle>
 				</CardHeader>
 				<CardContent className="p-0">
-					<ScrollArea className="h-[400px] px-4 pb-4">
+					<ScrollArea className="h-[480px] px-4 pb-4">
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 overflow-auto">
 							{filteredPeople.length === 0 ? (
 								<p className="text-xs text-muted-foreground pt-2">
@@ -126,7 +129,7 @@ const ConnectView = () => {
 
 									return (
 										<Card key={p.id} className="border border-border/60">
-											<CardContent className="py-2 px-3 text-xs space-y-1.5">
+											<CardContent className="px-3 text-xs space-y-1.5">
 												<div className="flex justify-between items-center gap-2">
 													<div>
 														<div className="font-medium text-foreground">
@@ -176,6 +179,22 @@ const ConnectView = () => {
 															{tag}
 														</Badge>
 													))}
+												</div>
+												<div className="pt-2">
+													<Button
+														size="sm"
+														className="text-xs"
+														onClick={() => {
+															const loc = getPersonLocation(p);
+															if (!loc) return;
+
+															useRouteState
+																.getState()
+																.setRouteToPersonNode(loc.nodeId);
+														}}
+													>
+														Go to Location
+													</Button>
 												</div>
 											</CardContent>
 										</Card>
