@@ -44,9 +44,9 @@ const Button = ({
 	...props
 }: React.ComponentProps<"button"> &
 	VariantProps<typeof buttonVariants> & {
-	tooltip?: string;
-	asChild?: boolean;
-}) => {
+		tooltip?: string;
+		asChild?: boolean;
+	}) => {
 	const Comp = asChild ? Slot : "button";
 	const btn = (
 		<Comp

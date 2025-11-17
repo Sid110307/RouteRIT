@@ -1,80 +1,53 @@
-# React + TypeScript + Vite
+# RouteRIT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A real-time offline campus navigation system for RIT.
 
-Currently, two official plugins are available:
+## Problem Statement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
-  uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used
-  in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+Large college campuses like RIT are extremely difficult to navigate for:
 
-## React Compiler
+- Freshers, who take weeks to learn where everything is
+- Parents & visitors, who get lost during events
+- Students rushing between classes, trying to find the shortest route
+- New faculty & staff, navigating labs, offices, and blocks
+- Competition participants or fest crowds, exploring locations for events
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it,
-see [this documentation](https://react.dev/learn/react-compiler/installation).
+Current solutions are inadequate:
 
-## Expanding the ESLint configuration
+- Google Maps does not map inside campuses
+- No app gives turn-by-turn indoor/outdoor hybrid routing
+- No tool shows alternate paths, avoids stairs, or uses campus-specific geometry
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+As a result, time is wasted, productivity drops, and accessibility suffers—especially for new students.
 
-```js
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
+## Proposed Solution
 
-            // Remove tseslint.configs.recommended and replace with this
-            tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            tseslint.configs.stylisticTypeChecked,
+RouteRIT is a fully client-side offline campus navigation web app built specifically for RIT. It gives students:
 
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-])
-```
+- Precise building-to-building routes
+- Turn-by-turn instructions based on actual campus geometry
+- Clean and easy-to-use navigation UI
+- Works without internet after loading once
+- No backend (all data stored in browser)
 
-You can also
-install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)
-and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)
-for React-specific lint rules:
+Our solution can be extended to other campuses with similar needs by updating the map data.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-])
-```
+- A hand designed schematic map of RIT campus covering Apex, ESB, DES, LHC, etc. blocks.
+- Unlike marker-to-marker routing, RouteRIT provides algorithmic routing based on A* pathfinding on a graph
+  representation of the campus.
+- Turn-by-turn navigation instructions with visual cues.
+- Offline functionality: Once loaded, the app works without internet access. No backend server is used.
+- Lightweight and fast: Minimal data usage and quick load times.
+- Accessibility features: Options for avoiding stairs, etc.
+
+## Tech Stack
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Zustand
+- SVG and JSON data for map rendering

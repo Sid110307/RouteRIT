@@ -12,9 +12,22 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "@/components/ui/pagination";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from "@/components/ui/table";
 
 interface DataTableProps<TData, TValue> {
 	table: ReturnType<typeof useReactTable<TData>>;
@@ -32,9 +45,9 @@ const DataTable = <TData, TValue>({ table, columns }: DataTableProps<TData, TVal
 								{header.isPlaceholder
 									? null
 									: flexRender(
-										header.column.columnDef.header,
-										header.getContext(),
-									)}
+											header.column.columnDef.header,
+											header.getContext(),
+										)}
 							</TableHead>
 						))}
 					</TableRow>
