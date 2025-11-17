@@ -48,7 +48,9 @@ export const Sidebar = () => {
 					</div>
 					{(open || openMobile) && (
 						<div className="flex flex-col gap-1.25">
-							<span className="text-xl font-semibold leading-tight">RouteRIT</span>
+							<span className="text-xl font-semibold leading-tight">
+								CampusConnect
+							</span>
 							<span className="text-sm text-muted-foreground leading-tight">
 								Campus navigation system
 							</span>

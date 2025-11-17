@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import BuildingChooser from "@/components/buildingChooser";
 import DirectionsPanel from "@/components/directionsPanel";
 import MapView from "@/components/mapView";
+import RoomChooser from "@/components/roomChooser";
 import RouteOptions from "@/components/routeOptions";
 import { Sidebar } from "@/components/sidebar";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
@@ -38,6 +39,7 @@ const App = () => {
 						transition={{ delay: 0.15, duration: 0.3 }}
 					>
 						<BuildingChooser />
+						<RoomChooser />
 						<RouteOptions />
 						<DirectionsPanel />
 					</motion.section>
