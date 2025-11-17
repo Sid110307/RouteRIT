@@ -1,74 +1,126 @@
 # CampusConnect
 
-> A campus navigation platform for students, faculty, and researchers.
+> A unified academic collaboration, research discovery, and campus-wide networking platform.
 
 ## Problem Statement
 
-Many universities and colleges face two long-standing challenges:
+Universities face a persistent gap in how academic information, research activity, and collaboration opportunities are
+distributed. Students, professors, and researchers struggle due to fragmented systems and siloed data:
 
-Students struggle to find:
+### Students cannot easily find:
 
-- Which professor works on what research area
-- Which labs or departments host specific equipment
-- Ongoing projects, research groups, or student clubs
-- Senior students or peers with matching academic interests
-- Opportunities for capstone projects, mentorship, or collaboration
+* Which professor works on which research topic
+* Available research groups, labs, or ongoing projects
+* Collaboration opportunities for papers, capstones, or open-source work
+* Internships, grants, and funding opportunities
+* International research connections
+* Upcoming conferences, seminars, or academic events
 
-LinkedIn and most existing platforms fail in the academic context:
+### Professors and researchers struggle with:
 
-- No verified university-level data
-- No mapping of labs, rooms, or buildings
-- No filtering by research domain or department
-- No proximity or campus-aware connections
+* Finding collaborators across departments or internationally
+* Organizing student contributors for ongoing research
+* Showcasing their work or accessing centralized research records
+* Licensing and government compliance for sharing academic data
+* Discovering relevant papers, emerging topics, or similar researchers
 
-Large campuses are equally difficult to navigate:
+### Existing platforms fall short:
 
-- Freshers take weeks to figure out classrooms and labs
-- Visitors wander during fests, conferences, and open days
-- Students rushing between classes lose time
-- Faculty and researchers struggle to locate cross-department facilities
+* LinkedIn lacks verified academic data and research-oriented filters
+* ResearchGate is isolated and not campus-aware
+* No platform combines research discovery, collaboration, and institutional mapping
+* No centralized hub for research papers, project sources, and lab directories
 
-There is no existing tool that provides:
+### Additionally, campuses themselves are increasingly difficult to navigate:
 
-- Turn-by-turn directions inside campus
-- Indoor + outdoor hybrid routing
-- Multiple route types (shortest, accessible, main paths)
-- Offline operation
+* Students and visitors often get lost across large buildings and blocks
+* Freshers spend weeks locating facilities, labs, and offices
+* No hybrid indoor–outdoor routing or accessibility-based pathfinding
 
-As a result, time is wasted, productivity drops, and accessibility suffers, especially for new students.
+As a result, productivity suffers, research collaboration is hindered, and students miss out on valuable academic and
+funding opportunities.
 
 ## Proposed Solution
 
-CampusConnect is a fully client-side offline academic discovery and campus navigation platform. It helps:
+CampusConnect is a centralized academic ecosystem that integrates professor discovery, research collaboration, funding
+access, and campus navigation—powered by AI-assisted research tools.
 
-- Find professors by research domain
-- Explore labs, equipment, research groups, and student clubs
-- Search for peers with matching interests
-- View verified academic profiles (via institutional identity)
-- Accurate lab-to-lab and building-to-building routes
-- Turn-by-turn instructions generated from actual campus geometry
-- Alternate paths, accessibility routing, and node-level graph navigation
-- Offline client-side functionality (no backend server used)
+The platform provides:
 
-Our solution can be extended to any campus with similar needs by updating the map data.
+* Comprehensive profiles of professors, researchers, and students
+* All profiles linked through verified institutional identities
+* Research groups, labs, equipment, and project sources in one place
 
-## Features
+* Finds relevant academic papers
+* Sorts research topics and identifies emerging domains
+* Summarizes papers and provides topic overviews
+* Suggests professors working on similar topics
+* Offers personalized research recommendations (premium)
 
-- Universal support for multiple universities and campuses
-- Structured academic directory of people, labs, research groups, and rooms
-- Verified academic profiles (faculty, researchers, students)
-- Category-based and floor-based room mapping (classrooms, labs, offices, etc.)
-- A* graph-based pathfinding for highly accurate navigation
-- Turn-by-turn directions with visual cues
-- Works offline after initial load
-- Multiple routing modes (shortest, main paths, accessible)
-- Lightweight, fast, and fully client-side
+* Students can join research projects (like GitHub for academia)
+* Open-source style contribution to papers or ongoing work
+* Forums for research discussions and Q&A with profs and students
+* International student–professor collaboration channels
+
+* Government funding info and compliance tools
+* Licensing pathways for using academic data ethically
+* Internships, grants, and funding institutions can post opportunities
+* Platform earns commission from successful funding/grants
+
+## Key Features
+
+### Academic Discovery
+
+* Filter professors by research domain, department, or keywords
+* Verified, structured academic profiles
+* Explore research groups, labs, and equipment inventories
+
+### Research Collaboration
+
+* Host and contribute to research projects
+* Version-controlled submissions (GitHub-like model)
+* Forums for academic discussions
+* Share research papers, datasets, and project sources
+* Post and browse academic job openings
+
+### AI Features (Freemium Model)
+
+* Free: basic search, limited summaries, topic overviews
+* Premium:
+    * Advanced paper summarization
+    * Topic modeling & trend detection
+    * Personalized research recommendations
+    * Enhanced filtering and analytical dashboards
+
+### Funding & Opportunities Hub
+
+* Internship postings
+* Research grants and financial aid listings
+* Funding institution partnerships
+* Commission-based revenue from successful funding connections
+
+### Events & Community
+
+* Track upcoming conferences and seminars
+* Post campus-wide academic events
+* International academic networking
+
+### Campus Navigation
+
+* Turn-by-turn indoor/outdoor navigation
+* A* graph-based pathfinding
+* Shortest, accessible, and main-path routes
+* Works offline after initial load
+
+### Storage
+
+* Cloud-based storage for projects, papers, and data
+* Optional local storage for premium users
 
 ## Tech Stack
 
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- Motion (Framer Motion)
-- Zustand
+* Frontend: React, Vite, TypeScript
+* UI: Tailwind CSS, Framer Motion
+* State Management: Zustand
+* AI Layer: ChatGPT / LLM-based research assistant (not included in this repo)
+* Storage: Cloud + optional local persistence

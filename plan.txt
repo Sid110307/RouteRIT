@@ -1,0 +1,18 @@
+professors collaborating in a university campus
+all different kinda ppl profiles are linked.
+students can find profs, research groups, etc. here cuz its centralized.
+research chatbot (finds relevant papers, sorts topics, summarizes, finds profs working on similar topics)
+govt funding + licensing to use profs data
+students can collaborate on research papers on here, and open source contribs like GH
+can connect with international students + profs.
+internships and financial institutions (funding opportunities and grants) can be posted here too.
+sources of peoples projects + research papers all centralized
+can have a forum for discussions on research topics
+section for upcoming conferences + seminars
+assume someone has a problem with some research topic, they can post it here and get help from profs + students
+people can also contribute to ongoing research projects like github
+add job postings in academia + research fields
+revenue model: freemium (basic access free, premium features for a fee but only limiting in quality e.g. limited ai stuff, basic metrics + filters)
+ai features can include advanced paper summarization, topic modeling, personalized research recommendations
+storage: cloud based with options for local storage for premium users
+commission from funding/grants secured through the platform 20% per hour
