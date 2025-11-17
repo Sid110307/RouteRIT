@@ -11,6 +11,7 @@ export default defineConfig({
 		viteCompression(),
 		ViteImageOptimizer(),
 	],
+	base: "/RouteRIT/",
 	server: { port: 3000 },
 	resolve: { alias: { "@": "/src" } },
 	build: { emptyOutDir: true },
