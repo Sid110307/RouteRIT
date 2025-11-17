@@ -11,6 +11,7 @@ export type RoomCategory =
 	| "library"
 	| "admin"
 	| "other";
+export type PersonRole = "student" | "faculty" | "researcher" | "club";
 
 export interface Node {
 	id: string;
@@ -39,4 +40,24 @@ export interface Room {
 	category: RoomCategory;
 	floor: number;
 	anchorNodeId: string;
+}
+
+export interface Lab {
+	id: string;
+	name: string;
+	department: string;
+	buildingId: string;
+	roomId?: string;
+	tags: string[];
+}
+
+export interface Person {
+	id: string;
+	name: string;
+	role: PersonRole;
+	department: string;
+	title?: string;
+	interests: string[];
+	labId?: string;
+	lookingFor?: string;
 }

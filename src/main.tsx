@@ -10,16 +10,12 @@ import { BrowserRouter } from "react-router";
 import { IconoirProvider } from "iconoir-react";
 import { ThemeProvider } from "next-themes";
 
-import { SidebarProvider } from "@/components/ui/sidebar";
-
 createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<IconoirProvider iconProps={{ width: 16, height: 16 }}>
-					<SidebarProvider>
-						<App />
-					</SidebarProvider>
+					<App />
 				</IconoirProvider>
 			</ThemeProvider>
 		</BrowserRouter>

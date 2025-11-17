@@ -1,4 +1,4 @@
-import { Building, Edge, Node, Room } from "@/core/types";
+import { Building, Edge, Lab, Node, Person, Room } from "@/core/types";
 
 export const nodes: Node[] = [
 	{ id: "N_MAIN_GATE", x: 80, y: 260, label: "Main Gate" },
@@ -275,3 +275,81 @@ export const buildingAnchors: { [key: string]: string } = {
 	B_HOSTEL_BOYS: "N_HOSTEL_B",
 	B_HOSTEL_GIRLS: "N_HOSTEL_G",
 };
+
+export const labs: Lab[] = [
+	{
+		id: "LAB_AI_ESB",
+		name: "AI & Machine Learning Lab",
+		department: "CSE",
+		buildingId: "B_ESB",
+		roomId: "ESB-ECE-LAB-1",
+		tags: ["ai", "ml", "cv"],
+	},
+	{
+		id: "LAB_EMBEDDED_APEX",
+		name: "Embedded Systems Lab",
+		department: "ECE",
+		buildingId: "B_APEX",
+		tags: ["embedded", "iot", "hardware"],
+	},
+	{
+		id: "LAB_STRUCTURES_DES",
+		name: "Structural Engineering Lab",
+		department: "Civil",
+		buildingId: "B_DES",
+		tags: ["civil", "structures"],
+	},
+];
+
+export const people: Person[] = [
+	{
+		id: "FAC_AIML_01",
+		name: "Dr. Jagadish S Kallimani",
+		role: "faculty",
+		department: "Artificial Intelligence & Machine Learning",
+		title: "Professor & HOD",
+		interests: ["ai", "soft computing", "nlp", "sentiment", "ai ethics"],
+		labId: undefined,
+		lookingFor: "PhD scholars and research collaborators in AI/ML",
+	},
+	{
+		id: "FAC_CSE_AI_01",
+		name: "Dr. Siddesh G M",
+		role: "faculty",
+		department: "Computer Science & Engineering (AI & ML)",
+		title: "Professor & HOD",
+		interests: ["data science", "distributed systems", "ml"],
+		labId: undefined,
+		lookingFor: "student interns for data-science projects",
+	},
+	{
+		id: "STU_CSE_01",
+		name: "Priya S",
+		role: "student",
+		department: "CSE",
+		title: "B.E. 3rd Year",
+		interests: ["ai", "computer vision", "robotics"],
+		labId: "LAB_AI_ESB",
+		lookingFor: "project team for computer vision / ML",
+	},
+	{
+		id: "STU_ECE_01",
+		name: "Rahul M",
+		role: "student",
+		department: "ECE",
+		title: "B.E. 2nd year",
+		interests: ["embedded", "hardware", "fpga"],
+		labId: "LAB_EMBEDDED_APEX",
+		lookingFor: "mentor for embedded projects",
+	},
+	{
+		id: "STU_CIVIL_01",
+		name: "Ananya K",
+		role: "student",
+		department: "Civil",
+		title: "B.E. 4th year",
+		interests: ["structures", "sustainability"],
+		labId: "LAB_STRUCTURES_DES",
+		lookingFor: "guidance for final-year project",
+	},
+];

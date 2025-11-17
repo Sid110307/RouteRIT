@@ -20,8 +20,6 @@ export default {
 		"",
 		"^(.*)assets(.*)$",
 		"",
-		"^(.*)pages(.*)$",
-		"",
 		"^(.*)components(.*)$",
 		"",
 		"^(.*)core(.*)$",
