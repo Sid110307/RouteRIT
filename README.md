@@ -2,6 +2,10 @@
 
 > A unified academic collaboration, research discovery, and campus-wide networking platform.
 
+<p align="center">
+  <img src="docs/campusconnect.jpg" alt="CampusConnect people and labs directory" width="900" />
+</p>
+
 ## Problem Statement
 
 Universities face a persistent gap in how academic information, research activity, and collaboration opportunities are distributed. Students, professors, and researchers struggle due to fragmented systems and siloed data:
@@ -125,6 +129,15 @@ The platform provides:
 * Motion (Framer Motion)
 * Zustand
 * LLM-based research assistant
+
+## Run locally
+
+```sh
+git clone https://github.com/Sid110307/RouteRIT.git
+cd RouteRIT
+pnpm install
+pnpm dev
+```
 
 ## Business Impact
 
